@@ -14,7 +14,7 @@ use strict;
 use vars qw($VERSION);
 use Image::ExifTool::XMP;
 
-$VERSION = '1.02';
+$VERSION = '1.03';
 
 sub ValidateMediaSummary($);
 
@@ -104,6 +104,13 @@ my %plusImageSupplier = (
   # TYPE        => 'plus:ImageSupplierDetail', (removed in 1.2.1)
     ImageSupplierID     => { },
     ImageSupplierName   => { },
+);
+my %plusPublisher = ( # new in LDF 1.2
+    STRUCT_NAME => 'Publisher',
+    NAMESPACE   => 'plus',
+    PublisherID      => { },
+    PublisherName    => { },
+    PublisherInfoURL => { },
 );
 
 # Media Matrix 1.1.1 decoding
@@ -2543,6 +2550,11 @@ my %mediaMatrix = (
             'DMI-PROHIBITED-SEEEMBEDDEDRIGHTSEXPR' => 'Prohibited, see iptcExt:EmbdEncRightsExpr',
             'DMI-PROHIBITED-SEELINKEDRIGHTSEXPR' => 'Prohibited, see iptcExt:LinkedEncRightsExpr',
         },
+    },
+    Publisher => {
+        FlatName => '',
+        Struct => \%plusPublisher,
+        List => 'Seq',
     },
 );
 

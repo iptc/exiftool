@@ -464,10 +464,26 @@ my %sBoundaryPoint = ( # new in 1.5
     rbX => { FlatName => 'X', Writable => 'real' },
     rbY => { FlatName => 'Y', Writable => 'real' },
 );
+my %sMbPartDetails = ( # new in 1.10
+    STRUCT_NAME => 'MultiboundaryPartDetails',
+    NAMESPACE   => 'Iptc4xmpExt',
+    rbMbPdPartId          => { FlatName => 'ID' },
+    rbMbPdPartName        => { FlatName => 'Name' },
+    rbMbPdPartDescription => { FlatName => 'Description' },
+);
 my %sRegionBoundary = ( # new in 1.5
     STRUCT_NAME => 'RegionBoundary',
     NAMESPACE   => 'Iptc4xmpExt',
-    rbShape => { FlatName => 'Shape', PrintConv => { rectangle => 'Rectangle', circle => 'Circle', polygon => 'Polygon' } },
+    rbShape => { FlatName => 'Shape', PrintConv => {
+        rectangle => 'Rectangle',
+        circle => 'Circle',
+        polygon => 'Polygon',
+        point => 'Point',                       # new in 1.10
+        multipoint => 'Multipoint',             # new in 1.10
+        linestring => 'Linestring',             # new in 1.10
+        multilinestring => 'Multilinestring',   # new in 1.10
+        multipolygon => 'Multipolygon',         # new in 1.10
+    } },
     rbUnit  => { FlatName => 'Unit',  PrintConv => { pixel => 'Pixel', relative => 'Relative' } },
     rbX => { FlatName => 'X', Writable => 'real' },
     rbY => { FlatName => 'Y', Writable => 'real' },
@@ -475,6 +491,9 @@ my %sRegionBoundary = ( # new in 1.5
     rbH => { FlatName => 'H', Writable => 'real' },
     rbRx => { FlatName => 'Rx', Writable => 'real' },
     rbVertices => { FlatName => 'Vertices', List => 'Seq', Struct => \%sBoundaryPoint },
+    # new in 1.10 (rbCoordinates value is a JSON array serialized as a string)
+    rbCoordinates   => { FlatName => 'Coordinates' },
+    rbMbPartDetails => { FlatName => 'PartDetails', List => 'Bag', Struct => \%sMbPartDetails },
 );
 my %sImageRegion = ( # new in 1.5
     STRUCT_NAME => 'ImageRegion',
@@ -490,6 +509,18 @@ my %sImageRegion = ( # new in 1.5
     Name   => { Namespace => 'Iptc4xmpExt', Writable => 'lang-alt' },
     rCtype => { Namespace => 'Iptc4xmpExt', FlatName => 'Ctype', List => 'Bag', Struct => \%sEntity },
     rRole  => { Namespace => 'Iptc4xmpExt', FlatName => 'Role',  List => 'Bag', Struct => \%sEntity },
+    # new in 1.10
+    rMemberOf => { Namespace => 'Iptc4xmpExt', FlatName => 'MemberOf' },
+);
+my %sDIQData = ( # new in 1.10
+    STRUCT_NAME => 'DIQData',
+    NAMESPACE   => 'Iptc4xmpExt',
+    DIQBenchmarkName      => { },
+    DIQPerformanceLevel   => { },
+    DIQEvaluationSoftware => { },
+    DIQTargetName         => { },
+    DIQTargetID           => { },
+    DIQTargetRegionID     => { },
 );
 
 # IPTC Extension namespace properties (Iptc4xmpExt) (ref 4, 14)
@@ -499,10 +530,9 @@ my %sImageRegion = ( # new in 1.5
     NAMESPACE   => 'Iptc4xmpExt',
     TABLE_DESC => 'XMP IPTC Extension',
     NOTES => q{
-This table contains tags defined by the IPTC Extension schema version 1.7
-and IPTC Video Metadata version 1.3, plus the AI additions.  The actual
-namespace prefix is "Iptc4xmpExt", but ExifTool shortens this for the family
-1 group name. (See
+This table contains tags defined by the IPTC Extension schema version 1.10
+and IPTC Video Metadata version 1.3.  The actual namespace prefix is
+"Iptc4xmpExt", but ExifTool shortens this for the family 1 group name. (See
 L<http://www.iptc.org/standards/photo-metadata/iptc-standard/> and
 L<https://iptc.org/standards/video-metadata-hub/>.)
     },
@@ -775,6 +805,16 @@ L<https://iptc.org/standards/video-metadata-hub/>.)
     AISystemVersionUsed => { },
     AIPromptInformation => { },
     AIPromptWriterName  => { },
+    # new IPTC Extension schema 1.10 properties
+    ImageRegionDepthOrder => { Groups => { 2 => 'Image' }, List => 'Seq' },
+    DateDigitised         => { Groups => { 2 => 'Time' }, %dateTimeInfo },
+    DigitisationNotes     => { },
+    DIQData => {
+        Groups => { 2 => 'Image' },
+        FlatName => '',
+        List => 'Bag',
+        Struct => \%sDIQData,
+    },
 );
 
 #------------------------------------------------------------------------------
