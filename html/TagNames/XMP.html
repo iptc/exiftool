@@ -13933,10 +13933,9 @@ shortens this for the family 1 group name. (see
 </table></td></tr></table></blockquote>
 
 <h2><a name='iptcExt'>XMP iptcExt Tags</a></h2>
-<p>This table contains tags defined by the IPTC Extension schema version 1.7
-and IPTC Video Metadata version 1.3, plus the AI additions.  The actual
-namespace prefix is &quot;Iptc4xmpExt&quot;, but ExifTool shortens this for the family
-1 group name. (See
+<p>This table contains tags defined by the IPTC Extension schema version 1.10
+and IPTC Video Metadata version 1.3.  The actual namespace prefix is
+&quot;Iptc4xmpExt&quot;, but ExifTool shortens this for the family 1 group name. (See
 <a href="http://www.iptc.org/standards/photo-metadata/iptc-standard/">http://www.iptc.org/standards/photo-metadata/iptc-standard/</a> and
 <a href="https://iptc.org/standards/video-metadata-hub/">https://iptc.org/standards/video-metadata-hub/</a>.)</p>
 
@@ -14205,133 +14204,179 @@ namespace prefix is &quot;Iptc4xmpExt&quot;, but ExifTool shortens this for the 
  + = List'>real_+</td>
 <td>&nbsp;</td></tr>
 <tr class=b>
+<td>DateDigitised</td>
+<td class=c>date</td>
+<td>&nbsp;</td></tr>
+<tr>
 <td>DigitalImageGUID</td>
 <td class=c>string</td>
 <td><span class=s><span class=n>(tag ID is &#39;DigImageGUID&#39;)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>DigitalSourceFileType</td>
 <td class=c>string</td>
 <td><span class=s><span class=n>(now deprecated -- replaced by DigitalSourceType)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>DigitalSourceType</td>
 <td class=c>string</td>
 <td>&nbsp;</td></tr>
+<tr class=b>
+<td>DigitisationNotes</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
 <tr>
+<td>DIQData</td>
+<td class=c title=' + = List'>struct+</td>
+<td>--&gt; <a href='XMP.html#DIQData'>DIQData Struct</a></td></tr>
+<tr class=b>
+<td>DIQBenchmarkName</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQBenchmarkName)</span></span></td></tr>
+<tr>
+<td>DIQEvaluationSoftware</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQEvaluationSoftware)</span></span></td></tr>
+<tr class=b>
+<td>DIQPerformanceLevel</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQPerformanceLevel)</span></span></td></tr>
+<tr>
+<td>DIQTargetID</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQTargetID)</span></span></td></tr>
+<tr class=b>
+<td>DIQTargetName</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQTargetName)</span></span></td></tr>
+<tr>
+<td>DIQTargetRegionID</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(DIQDataDIQTargetRegionID)</span></span></td></tr>
+<tr class=b>
 <td>Dopesheet</td>
 <td class=c>lang-alt</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>DopesheetLink</td>
 <td class=c title=' + = List'>struct+</td>
 <td>--&gt; <a href='XMP.html#QualifiedLink'>QualifiedLink Struct</a></td></tr>
-<tr>
+<tr class=b>
 <td>DopesheetLinkLink</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>DopesheetLinkLinkQualifier</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>EmbdEncRightsExpr</td>
 <td class=c title=' + = List'>struct+</td>
 <td>--&gt; <a href='XMP.html#EEREDetails'>EEREDetails Struct</a></td></tr>
-<tr class=b>
+<tr>
 <td>EmbeddedEncodedRightsExpr</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(EmbdEncRightsExprEncRightsExpr)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>EmbeddedEncodedRightsExprType</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(EmbdEncRightsExprRightsExprEncType)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>EmbeddedEncodedRightsExprLangID</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(EmbdEncRightsExprRightsExprLangId)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>Episode</td>
 <td class=c>struct</td>
 <td>--&gt; <a href='XMP.html#EpisodeOrSeason'>EpisodeOrSeason Struct</a></td></tr>
-<tr class=b>
+<tr>
 <td>EpisodeIdentifier</td>
 <td class=c title=' _ = Flattened'>string_</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>EpisodeName</td>
 <td class=c title=' _ = Flattened'>string_</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>EpisodeNumber</td>
 <td class=c title=' _ = Flattened'>string_</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>Event</td>
 <td class=c>lang-alt</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>ShownEvent</td>
 <td class=c title=' + = List'>struct+</td>
 <td>--&gt; <a href='XMP.html#Entity'>Entity Struct</a>
   <br><span class='n s'>(tag ID is &#39;EventExt&#39;)</span></td></tr>
-<tr>
+<tr class=b>
 <td>ShownEventIdentifier</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(EventExtIdentifier)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>ShownEventName</td>
 <td class=c title=' _ = Flattened
  + = List'>lang-alt_+</td>
 <td><span class=s><span class=n>(EventExtName)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>EventID</td>
 <td class=c title=' + = List'>string+</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>ExternalMetadataLink</td>
 <td class=c title=' + = List'>string+</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>FeedIdentifier</td>
 <td class=c>string</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>Genre</td>
 <td class=c title=' + = List'>struct+</td>
 <td>--&gt; <a href='XMP.html#CVTermDetails'>CVTermDetails Struct</a></td></tr>
-<tr>
+<tr class=b>
 <td>GenreCvId</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>GenreCvTermId</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>GenreCvTermName</td>
 <td class=c title=' _ = Flattened
  + = List'>lang-alt_+</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>GenreCvTermRefinedAbout</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td>&nbsp;</td></tr>
-<tr>
+<tr class=b>
 <td>Headline</td>
 <td class=c title=' / = Avoid'>lang-alt/</td>
 <td>&nbsp;</td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegion</td>
 <td class=c title=' + = List'>struct+</td>
 <td>--&gt; <a href='XMP.html#ImageRegion'>ImageRegion Struct</a></td></tr>
+<tr class=b>
+<td>ImageRegionDepthOrder</td>
+<td class=c title=' + = List'>string+</td>
+<td>&nbsp;</td></tr>
 <tr>
 <td>ImageRegionName</td>
 <td class=c title=' _ = Flattened
@@ -14360,66 +14405,103 @@ namespace prefix is &quot;Iptc4xmpExt&quot;, but ExifTool shortens this for the 
 <td>--&gt; <a href='XMP.html#RegionBoundary'>RegionBoundary Struct</a>
   <br><span class='n s'>(ImageRegionRegionBoundary)</span></td></tr>
 <tr class=b>
+<td>ImageRegionBoundaryCoordinates</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbCoordinates)</span></span></td></tr>
+<tr>
 <td>ImageRegionBoundaryH</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbH)</span></span></td></tr>
+<tr class=b>
+<td>ImageRegionBoundaryPartDetails</td>
+<td class=c title=' _ = Flattened
+ + = List'>struct_+</td>
+<td>--&gt; <a href='XMP.html#MultiboundaryPartDetails'>MultiboundaryPartDetails Struct</a>
+  <br><span class='n s'>(ImageRegionRegionBoundaryRbMbPartDetails)</span></td></tr>
 <tr>
+<td>ImageRegionBoundaryPartDetailsDescription</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartDescription)</span></span></td></tr>
+<tr class=b>
+<td>ImageRegionBoundaryPartDetailsID</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartId)</span></span></td></tr>
+<tr>
+<td>ImageRegionBoundaryPartDetailsName</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartName)</span></span></td></tr>
+<tr class=b>
 <td>ImageRegionBoundaryRx</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbRx)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegionBoundaryShape</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
-<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbShape)</span>
-  <br>&#39;circle&#39; = Circle
+<td><span class=s><span class=n>(ImageRegionRegionBoundaryRbShape)</span></span><table class=cols><tr>
+  <td>&#39;circle&#39; = Circle
+  <br>&#39;linestring&#39; = Linestring
+  <br>&#39;multilinestring&#39; = Multilinestring
+  <br>&#39;multipoint&#39; = Multipoint
+  <br>&#39;multipolygon&#39; = Multipolygon
+  <br>&#39;point&#39; = Point
   <br>&#39;polygon&#39; = Polygon
-  <br>&#39;rectangle&#39; = Rectangle</span></td></tr>
-<tr>
+  <br>&#39;rectangle&#39; = Rectangle</td></tr></table>
+</td></tr>
+<tr class=b>
 <td>ImageRegionBoundaryUnit</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbUnit)</span>
   <br>&#39;pixel&#39; = Pixel
   <br>&#39;relative&#39; = Relative</span></td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegionBoundaryVertices</td>
 <td class=c title=' _ = Flattened
  + = List'>struct_+</td>
 <td>--&gt; <a href='XMP.html#BoundaryPoint'>BoundaryPoint Struct</a>
   <br><span class='n s'>(ImageRegionRegionBoundaryRbVertices)</span></td></tr>
-<tr>
+<tr class=b>
 <td>ImageRegionBoundaryVerticesX</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbVerticesRbX)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegionBoundaryVerticesY</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbVerticesRbY)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>ImageRegionBoundaryW</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbW)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegionBoundaryX</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbX)</span></span></td></tr>
-<tr>
+<tr class=b>
 <td>ImageRegionBoundaryY</td>
 <td class=c title=' _ = Flattened
  + = List'>real_+</td>
 <td><span class=s><span class=n>(ImageRegionRegionBoundaryRbY)</span></span></td></tr>
-<tr class=b>
+<tr>
 <td>ImageRegionID</td>
 <td class=c title=' _ = Flattened
  + = List'>string_+</td>
 <td><span class=s><span class=n>(ImageRegionRId)</span></span></td></tr>
+<tr class=b>
+<td>ImageRegionMemberOf</td>
+<td class=c title=' _ = Flattened
+ + = List'>string_+</td>
+<td><span class=s><span class=n>(ImageRegionRMemberOf)</span></span></td></tr>
 <tr>
 <td>ImageRegionRole</td>
 <td class=c title=' _ = Flattened
@@ -15327,6 +15409,38 @@ namespace prefix is &quot;Iptc4xmpExt&quot;, but ExifTool shortens this for the 
 <td>&nbsp;</td></tr>
 </table></td></tr></table></blockquote>
 
+<h2><a name='DIQData'>XMP DIQData Struct</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Field Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td>DIQBenchmarkName</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>DIQEvaluationSoftware</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>DIQPerformanceLevel</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>DIQTargetID</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>DIQTargetName</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>DIQTargetRegionID</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
 <h2><a name='QualifiedLink'>XMP QualifiedLink Struct</a></h2>
 <blockquote>
 <table class=frame><tr><td>
@@ -15410,6 +15524,10 @@ is to write ImageRegion as a structure with these tags as new fields.</p>
 <td class=c>string</td>
 <td>&nbsp;</td></tr>
 <tr>
+<td>RMemberOf</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
 <td>RRole</td>
 <td class=c title=' + = List'>Entity+</td>
 <td>--&gt; <a href='XMP.html#Entity'>Entity Struct</a></td></tr>
@@ -15422,9 +15540,17 @@ is to write ImageRegion as a structure with these tags as new fields.</p>
 <tr class=h><th>Field Name</th>
 <th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
 <tr>
+<td>RbCoordinates</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
 <td>RbH</td>
 <td class=c>real</td>
 <td>&nbsp;</td></tr>
+<tr>
+<td>RbMbPartDetails</td>
+<td class=c title=' + = List'>MultiboundaryPartDetails+</td>
+<td>--&gt; <a href='XMP.html#MultiboundaryPartDetails'>MultiboundaryPartDetails Struct</a></td></tr>
 <tr class=b>
 <td>RbRx</td>
 <td class=c>real</td>
@@ -15433,6 +15559,11 @@ is to write ImageRegion as a structure with these tags as new fields.</p>
 <td>RbShape</td>
 <td class=c>string</td>
 <td><span class=s>circle = Circle
+  <br>linestring = Linestring
+  <br>multilinestring = Multilinestring
+  <br>multipoint = Multipoint
+  <br>multipolygon = Multipolygon
+  <br>point = Point
   <br>polygon = Polygon
   <br>rectangle = Rectangle</span></td></tr>
 <tr class=b>
@@ -15455,6 +15586,26 @@ is to write ImageRegion as a structure with these tags as new fields.</p>
 <tr class=b>
 <td>RbY</td>
 <td class=c>real</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='MultiboundaryPartDetails'>XMP MultiboundaryPartDetails Struct</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Field Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td>RbMbPdPartDescription</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>RbMbPdPartId</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>RbMbPdPartName</td>
+<td class=c>string</td>
 <td>&nbsp;</td></tr>
 </table></td></tr></table></blockquote>
 
@@ -20686,6 +20837,26 @@ XMP module for convenience.  (see <a href="http://www.w3.org/TR/SVG11/">http://w
   <br>work = Work</span></td></tr>
 <tr class=b>
 <td>LicensorURL</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+</table></td></tr></table></blockquote>
+
+<h2><a name='Publisher'>XMP Publisher Struct</a></h2>
+<blockquote>
+<table class=frame><tr><td>
+<table class=inner cellspacing=1>
+<tr class=h><th>Field Name</th>
+<th>Writable</th><th>Values / <span class=n>Notes</span></th></tr>
+<tr>
+<td>PublisherID</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr class=b>
+<td>PublisherInfoURL</td>
+<td class=c>string</td>
+<td>&nbsp;</td></tr>
+<tr>
+<td>PublisherName</td>
 <td class=c>string</td>
 <td>&nbsp;</td></tr>
 </table></td></tr></table></blockquote>

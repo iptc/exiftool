@@ -12,7 +12,7 @@ meta information extracted from or written to a file.
 =head1 TAG TABLES
 
 The tables listed below give the names of all tags recognized by ExifTool.
-They contain a total of 33786 tags, with 21538 unique tag names.
+They contain a total of 33806 tags, with 21557 unique tag names.
 
 B<Tag ID>, B<Index#> or B<Sequence> is given in the first column of each
 table.  A B<Tag ID> is the computer-readable equivalent of a tag name, and
@@ -4754,10 +4754,9 @@ These tags belong to the ExifTool XMP-iptcCore family 1 group.
 
 =head3 XMP iptcExt Tags
 
-This table contains tags defined by the IPTC Extension schema version 1.7
-and IPTC Video Metadata version 1.3, plus the AI additions.  The actual
-namespace prefix is "Iptc4xmpExt", but ExifTool shortens this for the family
-1 group name. (See
+This table contains tags defined by the IPTC Extension schema version 1.10
+and IPTC Video Metadata version 1.3.  The actual namespace prefix is
+"Iptc4xmpExt", but ExifTool shortens this for the family 1 group name. (See
 L<http://www.iptc.org/standards/photo-metadata/iptc-standard/> and
 L<https://iptc.org/standards/video-metadata-hub/>.)
 
@@ -4820,9 +4819,18 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   DataOnScreenRegionW                           real_+
   DataOnScreenRegionX                           real_+
   DataOnScreenRegionY                           real_+
+  DateDigitised                                 date
   DigitalImageGUID                              string
   DigitalSourceFileType                         string
   DigitalSourceType                             string
+  DigitisationNotes                             string
+  DIQData                                       DIQData Struct+
+  DIQBenchmarkName                              string_+
+  DIQEvaluationSoftware                         string_+
+  DIQPerformanceLevel                           string_+
+  DIQTargetID                                   string_+
+  DIQTargetName                                 string_+
+  DIQTargetRegionID                             string_+
   Dopesheet                                     lang-alt
   DopesheetLink                                 QualifiedLink Struct+
   DopesheetLinkLink                             string_+
@@ -4849,12 +4857,18 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   GenreCvTermRefinedAbout                       string_+
   Headline                                      lang-alt/
   ImageRegion                                   ImageRegion Struct+
+  ImageRegionDepthOrder                         string+
   ImageRegionName                               lang-alt_+
   ImageRegionCtype                              Entity Struct_+
   ImageRegionCtypeIdentifier                    string_+
   ImageRegionCtypeName                          lang-alt_+
   ImageRegionBoundary                           RegionBoundary Struct_+
+  ImageRegionBoundaryCoordinates                string_+
   ImageRegionBoundaryH                          real_+
+  ImageRegionBoundaryPartDetails                MultiboundaryPartDetails Struct_+
+  ImageRegionBoundaryPartDetailsDescription     string_+
+  ImageRegionBoundaryPartDetailsID              string_+
+  ImageRegionBoundaryPartDetailsName            string_+
   ImageRegionBoundaryRx                         real_+
   ImageRegionBoundaryShape                      string_+
   ImageRegionBoundaryUnit                       string_+
@@ -4865,6 +4879,7 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   ImageRegionBoundaryX                          real_+
   ImageRegionBoundaryY                          real_+
   ImageRegionID                                 string_+
+  ImageRegionMemberOf                           string_+
   ImageRegionRole                               Entity Struct_+
   ImageRegionRoleIdentifier                     string_+
   ImageRegionRoleName                           lang-alt_+
@@ -5081,6 +5096,17 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   X                                             real
   Y                                             real
 
+=head3 XMP DIQData Struct
+
+  Field Name                                    Writable
+  ----------                                    --------
+  DIQBenchmarkName                              string
+  DIQEvaluationSoftware                         string
+  DIQPerformanceLevel                           string
+  DIQTargetID                                   string
+  DIQTargetName                                 string
+  DIQTargetRegionID                             string
+
 =head3 XMP QualifiedLink Struct
 
   Field Name                                    Writable
@@ -5117,13 +5143,16 @@ is to write ImageRegion as a structure with these tags as new fields.
   RegionBoundary                                RegionBoundary Struct
   RCtype                                        Entity Struct+
   RId                                           string
+  RMemberOf                                     string
   RRole                                         Entity Struct+
 
 =head3 XMP RegionBoundary Struct
 
   Field Name                                    Writable
   ----------                                    --------
+  RbCoordinates                                 string
   RbH                                           real
+  RbMbPartDetails                               MultiboundaryPartDetails Struct+
   RbRx                                          real
   RbShape                                       string
   RbUnit                                        string
@@ -5131,6 +5160,14 @@ is to write ImageRegion as a structure with these tags as new fields.
   RbW                                           real
   RbX                                           real
   RbY                                           real
+
+=head3 XMP MultiboundaryPartDetails Struct
+
+  Field Name                                    Writable
+  ----------                                    --------
+  RbMbPdPartDescription                         string
+  RbMbPdPartId                                  string
+  RbMbPdPartName                                string
 
 =head3 XMP BoundaryPoint Struct
 
@@ -6856,6 +6893,10 @@ These tags belong to the ExifTool XMP-plus family 1 group.
   ProductOrServiceConstraints                   lang-alt
   PropertyReleaseID                             string+
   PropertyReleaseStatus                         string
+  Publisher                                     Publisher Struct+
+  PublisherID                                   string_+
+  PublisherInfoURL                              string_+
+  PublisherName                                 string_+
   RegionConstraints                             lang-alt
   Reuse                                         string
   TermsAndConditionsText                        lang-alt
@@ -6915,6 +6956,14 @@ These tags belong to the ExifTool XMP-plus family 1 group.
   LicensorTelephoneType1                        string
   LicensorTelephoneType2                        string
   LicensorURL                                   string
+
+=head3 XMP Publisher Struct
+
+  Field Name                                    Writable
+  ----------                                    --------
+  PublisherID                                   string
+  PublisherInfoURL                              string
+  PublisherName                                 string
 
 =head2 ICC_Profile Tags
 
