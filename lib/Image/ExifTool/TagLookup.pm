@@ -3958,6 +3958,7 @@ my %tagLookup = (
 	'imageregionboundarypartdetails' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbMbPartDetails'] },
 	'imageregionboundarypartdetailsdescription' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartDescription'] },
 	'imageregionboundarypartdetailsid' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartId'] },
+	'imageregionboundarypartdetailsindex' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartIndex'] },
 	'imageregionboundarypartdetailsname' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbMbPartDetailsRbMbPdPartName'] },
 	'imageregionboundaryrx' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbRx'] },
 	'imageregionboundaryshape' => { 563 => [\'ImageRegion','ImageRegionRegionBoundaryRbShape'] },

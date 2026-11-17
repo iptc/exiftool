@@ -12,7 +12,7 @@ meta information extracted from or written to a file.
 =head1 TAG TABLES
 
 The tables listed below give the names of all tags recognized by ExifTool.
-They contain a total of 33806 tags, with 21557 unique tag names.
+They contain a total of 33807 tags, with 21558 unique tag names.
 
 B<Tag ID>, B<Index#> or B<Sequence> is given in the first column of each
 table.  A B<Tag ID> is the computer-readable equivalent of a tag name, and
@@ -4824,7 +4824,7 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   DigitalSourceFileType                         string
   DigitalSourceType                             string
   DigitisationNotes                             string
-  DIQData                                       DIQData Struct+
+  DIQData                                       DIQDataDetails Struct+
   DIQBenchmarkName                              string_+
   DIQEvaluationSoftware                         string_+
   DIQPerformanceLevel                           string_+
@@ -4868,6 +4868,7 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   ImageRegionBoundaryPartDetails                MultiboundaryPartDetails Struct_+
   ImageRegionBoundaryPartDetailsDescription     string_+
   ImageRegionBoundaryPartDetailsID              string_+
+  ImageRegionBoundaryPartDetailsIndex           integer_+
   ImageRegionBoundaryPartDetailsName            string_+
   ImageRegionBoundaryRx                         real_+
   ImageRegionBoundaryShape                      string_+
@@ -5096,7 +5097,7 @@ These tags belong to the ExifTool XMP-iptcExt family 1 group.
   X                                             real
   Y                                             real
 
-=head3 XMP DIQData Struct
+=head3 XMP DIQDataDetails Struct
 
   Field Name                                    Writable
   ----------                                    --------
@@ -5167,6 +5168,7 @@ is to write ImageRegion as a structure with these tags as new fields.
   ----------                                    --------
   RbMbPdPartDescription                         string
   RbMbPdPartId                                  string
+  RbMbPdPartIndex                               integer
   RbMbPdPartName                                string
 
 =head3 XMP BoundaryPoint Struct

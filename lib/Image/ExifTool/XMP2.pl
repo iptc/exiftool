@@ -468,6 +468,7 @@ my %sMbPartDetails = ( # new in 1.10
     STRUCT_NAME => 'MultiboundaryPartDetails',
     NAMESPACE   => 'Iptc4xmpExt',
     rbMbPdPartId          => { FlatName => 'ID' },
+    rbMbPdPartIndex       => { FlatName => 'Index', Writable => 'integer' },
     rbMbPdPartName        => { FlatName => 'Name' },
     rbMbPdPartDescription => { FlatName => 'Description' },
 );
@@ -513,7 +514,7 @@ my %sImageRegion = ( # new in 1.5
     rMemberOf => { Namespace => 'Iptc4xmpExt', FlatName => 'MemberOf' },
 );
 my %sDIQData = ( # new in 1.10
-    STRUCT_NAME => 'DIQData',
+    STRUCT_NAME => 'DIQDataDetails',
     NAMESPACE   => 'Iptc4xmpExt',
     DIQBenchmarkName      => { },
     DIQPerformanceLevel   => { },
